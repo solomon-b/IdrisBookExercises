@@ -45,7 +45,7 @@ searchStore (MkData _ store) val = f store
   where
     f : Vect m String -> String
     f {m = Z} [] = ""
-    f {m = S l} (x :: xs) = if val `isInfixOf` x then show l ++ ": " ++ x ++ "\n" ++ f xs else f xs
+    f {m = S l} (x :: xs) = if val `isInfixOf` x then f xs ++ show l ++ ": " ++ x ++ "\n" else f xs
 
 parseCommand : (cmd : String) -> (args : String) -> Maybe Command
 parseCommand "add" str = Just $ Add str
