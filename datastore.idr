@@ -175,6 +175,7 @@ res : String
 res = searchStore sto "T"
 
 -}
+
 main : IO ()
 main = replWith (MkData SString _ []) "Command: " processInput
 
